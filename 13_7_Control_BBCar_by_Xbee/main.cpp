@@ -9,11 +9,6 @@ BufferedSerial xbee(D1, D0);
 BBCar car(pin5, pin6, servo_ticker);
 
 int main() {
-    double pwm_table0[] = {-30, 0, 30};
-    double speed_table0[] = {-7, 0, 7};
-    double pwm_table1[] = {-30, 0, 30};
-    double speed_table1[] = {-20, 0, 20};
-    car.setCalibTable(3, pwm_table0, speed_table0, 3, pwm_table1, speed_table1);
    char buf[256], outbuf[256];
    FILE *devin = fdopen(&xbee, "r");
    FILE *devout = fdopen(&xbee, "w");
